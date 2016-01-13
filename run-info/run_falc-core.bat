@@ -1,0 +1,1 @@
+java -Xms1G -Xmx4G -jar falc-sim-impl-1.1.0.jar -Dproject.name="path to project"

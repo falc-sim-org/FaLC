@@ -1,0 +1,1 @@
+java -Xms1G -Xmx4G -Xdebug -Xrunjdwp:transport=dt_socket,address=127.0.0.1:8888,server=y,suspend=y -jar falc-sim-impl-1.1.0.jar -Dproject.name="path to project"

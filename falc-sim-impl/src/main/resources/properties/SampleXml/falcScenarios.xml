@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<falcconfig>
+
+	<scenario id="sua_universe_2010" desc="sua_universe" active="true" >
+	  <property name="run.universe" value="true" />	  
+	  <property name="run.universe.population.subschema" value="sua_v03" />
+	  	  
+	  <table name="assumptions/marginal_totals_base_year" value="assumptions/marginal_totals_base_year_sua" />   
+	  <table name="assumptions/location_attributes" value="assumptions/location_attributes_sua" />	   
+	  <table name="assumptions/marginal_totals_development" value="assumptions/marginal_totals_development_sua" /> 
+	  <table name="assumptions/landusage_building_zone_regulation" value="assumptions/landusage_building_zone_regulation_2010" />
+	  <table name="assumptions/landusage_bzr_calibration" value="assumptions/landusage_bzr_calibration_sua-2010_v03_demand" />	  
+	  <table name="assumptions/landusage_m2_per_person" value="assumptions/landusage_m2_per_person_sua" />
+	  <table name="assumptions/landusage_uf_assumptions" value="assumptions/landusage_uf_assumptions_sua_v02" />
+	  <table name="assumptions/migration" value="assumptions/migration_sua" />
+	  <table name="subsets/location_subset_development" value="subsets/location_subset_development_sua" />	  
+	  <table name="assumptions/base_data_synthetic_population" value="assumptions/base_data_synthetic_population_sua" />
+	  <table name="assumptions/migration" value="assumptions/migration_sua" />
+	  <table name="assumptions/control_totals_residents" value="assumptions/control_totals_residents_sua" />
+	  
+      <property name="run.universe.cycles" value="5" />   
+      <property name="run.universe.reference.runs" value="true" />	  
+      <property name="run.universe.reference.runs.to.cycle" value="10" />
+      <property name="run.universe.final.save" value="true" />
+	  <property name="run.universe.reference.runs.copy.best.cycle" value="true" />  
+	  <property name="run.universe.reference.runs.copy.best.cycle.population.name" value="results_sua_2015" />  
+	  <property name="run.universe.reference.runs.copy.best.cycle.clean.universe" value="true" />  	  
+	   
+      <property name="run.indicators.description" value="SUA_synthesis_subsets_universe" /> 
+	  <property name="run.indicators.extra.description" value="" />	        	  
+    </scenario>
+
+	<scenario id="sua_universe_2015" desc="sua_universe" active="true" >
+	  <property name="run.universe" value="true" />	  
+	  <property name="run.universe.population.subschema" value="results_sua_2015" />
+	  	  
+	  <table name="assumptions/marginal_totals_base_year" value="assumptions/marginal_totals_base_year_sua" />   
+	  <table name="assumptions/location_attributes" value="assumptions/location_attributes_sua" />	   
+	  <table name="assumptions/marginal_totals_development" value="assumptions/marginal_totals_development_sua" /> 
+	  <table name="assumptions/landusage_building_zone_regulation" value="assumptions/landusage_building_zone_regulation_2015" />
+	  <table name="assumptions/landusage_bzr_calibration" value="assumptions/landusage_bzr_calibration_sua-2010_v03_demand" />	  
+	  <table name="assumptions/landusage_m2_per_person" value="assumptions/landusage_m2_per_person_sua" />
+	  <table name="assumptions/landusage_uf_assumptions" value="assumptions/landusage_uf_assumptions_sua_v02" />
+	  <table name="assumptions/migration" value="assumptions/migration_sua" />
+	  <table name="subsets/location_subset_development" value="subsets/location_subset_development_sua" />	  
+	  <table name="assumptions/base_data_synthetic_population" value="assumptions/base_data_synthetic_population_sua" />
+	  <table name="assumptions/migration" value="assumptions/migration_sua" />
+	  <table name="assumptions/control_totals_residents" value="assumptions/control_totals_residents_sua" />
+	  
+      <property name="run.universe.cycles" value="5" />   
+      <property name="run.universe.reference.runs" value="true" />	  
+      <property name="run.universe.reference.runs.to.cycle" value="10" />
+      <property name="run.universe.final.save" value="true" />
+	  <property name="run.universe.reference.runs.copy.best.cycle" value="true" />  	
+	  <property name="run.universe.reference.runs.copy.best.cycle.population.name" value="results_sua_2020" />  
+	  <property name="run.universe.reference.runs.copy.best.cycle.clean.universe" value="true" />	    
+	   
+      <property name="run.indicators.description" value="SUA_synthesis_subsets_universe" /> 
+	  <property name="run.indicators.extra.description" value="" />	        	  
+   </scenario>
+    
+</falcconfig>

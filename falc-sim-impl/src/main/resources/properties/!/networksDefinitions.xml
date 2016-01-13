@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<config>
+    <!-- tabled will be populated at once if run.distance=true in run.properties -->
+
+	<populate type="ARE" tablename="distances/filename01" populate="false">		 
+    	<cardistances path="d:\Projects\Eclipse\RegioConcept\falcsim-distribution\FaLC\FaLC_template_0_0_1.proj\db\npvm\Distanzmatrizen\1_miv_distanz_2005.dat" />
+		<cartimes path="d:\Projects\Eclipse\RegioConcept\falcsim-distribution\FaLC\FaLC_template_0_0_1.proj\db\npvm\Distanzmatrizen\2_miv_reisezeiten_2005.dat" />
+		<publicdistances path="d:\Projects\Eclipse\RegioConcept\falcsim-distribution\FaLC\FaLC_template_0_0_1.proj\db\npvm\Distanzmatrizen\3_oev_distanz_2005.dat" />
+		<publictimes path="d:\Projects\Eclipse\RegioConcept\falcsim-distribution\FaLC\FaLC_template_0_0_1.proj\db\npvm\Distanzmatrizen\4_oev_reisezeiten_2005.dat" />
+		<missingdistancesreport path="d:/Projects/Eclipse/RegioConcept/falcsim/populate_distances_report_ARE.csv" />
+	</populate>
+	
+	<!-- 
+		delimiter 			-	source CSV files delimiter
+		usemodifiedvalues	-	columns "modifdist", "modiftime" are used if not empty instead of defaults
+		intermedieteoutput	-	saves intermediate(like ARE source) files instead of distance table, "outputname" must contains valid output path
+	 -->
+	<populate populate="true" type="OSM" outputname="distances/filename02" usemodifiedvalues="true" intermedieteoutput="false">
+    	<centroids path="g:\Dropbox (regioConcept)\003 Daten FaLC_SCS\Transport\MIV\Networks\2014-09-09\Centroids_v01.csv" />
+     	<generalizedStreetsCars delimiter="," path="g:\Dropbox (regioConcept)\003 Daten FaLC_SCS\Transport\MIV\Networks\2014-09-09\FaLCnetwork_0a_v01.csv" />
+    	<generalizedStreetsPublic delimiter="," path="g:\Dropbox (regioConcept)\003 Daten FaLC_SCS\Transport\MIV\Networks\2014-09-09\FaLCnetwork_0a_v01.csv" />
+		<missingdistancesreport path="d:/Projects/Eclipse/RegioConcept/falcsim/populate_distances_report_OSM.csv" />    	   
+	</populate>
+
+</config>

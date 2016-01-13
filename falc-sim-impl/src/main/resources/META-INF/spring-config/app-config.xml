@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="
+		http://www.springframework.org/schema/beans	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.1.xsd
+	">
+	
+	<bean id="applicationContextProvider" class="org.falcsim.agentmodel.app.AppCtxProvider"/>
+	
+	<!-- org.springframework.beans.factory.config.PropertyPlaceholderConfigurer -->
+	<bean id="propertyConfigurer" 
+		class="org.falcsim.agentmodel.app.FalcPropertyPlaceholderConfigurer">
+		<property name="ignoreUnresolvablePlaceholders" value="true"/>
+        <property name="systemPropertiesModeName" value="SYSTEM_PROPERTIES_MODE_OVERRIDE"/>
+        <property name="searchSystemEnvironment" value="true"/>
+        <property name="ignoreResourceNotFound" value="true"/>        
+		<property name="locations">
+			<list>
+				 <value>classpath:properties/falc.properties</value>
+			</list>
+		</property>
+	</bean>
+	
+	<bean  class="org.falcsim.agentmodel.app.domain.RunParameters">
+		<property name="app_systemQuery" value="${syn.cantonsFilter}" />
+		<property name="app_theYear" value="${syn.theYear}" />           
+		
+		<property name="run_synthese" value="${run.synthese}"/>
+       	<property name="run_populateDistances" value="${run.populateDistances}"/>
+       	<property name="run_universe" value="${run.universe}"/>
+       			
+		<property name="run_sublocations" value="${run.generate.locations.subset}"/>		
+		<property name="run_yearly_accessible_variables" value="${run.yearly.calculate.accessibility.variables}"/>       	
+       	
+      	<property name="service_cycles" value="${run.universe.years}"/>
+      	<property name="service_maximum_threads" value="${app.maximum.threads}"/>
+      	<property name="service_final_save" value="${run.universe.final.save}"/>
+      	<property name="population_sub_schema" value="${run.universe.population.subschema}"/>
+	
+		<property name="universe_reference_runs" value="${run.universe.reference.runs}"/>
+		<property name="universe_use_random_byID" value="${run.universe.use.random.managed.by.ID}"/>		
+		<property name="universe_reference_runs_rg_seed" value="${run.universe.reference.runs.random.generator.seed}"/>			
+		<property name="universe_reference_runs_cycles_startfrom" value="${run.universe.reference.runs.from.cycle}"/>
+		<property name="universe_reference_runs_cycles" value="${run.universe.reference.runs.to.cycle}"/>		
+		<property name="universe_reference_runs_copy_best_cycle" value="${run.universe.reference.runs.copy.best.cycle}"/>
+		<property name="universe_reference_runs_copy_best_cycle_name" value="${run.universe.reference.runs.copy.best.cycle.population.name}"/>
+		<property name="universe_reference_runs_copy_best_cycle_clean" value="${run.universe.reference.runs.copy.best.cycle.clean.universe}"/>
+		
+		<property name="universe_reference_runs_schema" value="${run.universe.reference.runs.schema}"/>
+		<property name="universe_reference_runs_statistics" value="${run.universe.reference.runs.statistics}"/>
+		<property name="universe_reference_runs_statistics_avg" value="${run.universe.reference.runs.statistics.avg}"/>
+		<property name="universe_reference_runs_statistics_min" value="${run.universe.reference.runs.statistics.min}"/>
+		<property name="universe_reference_runs_statistics_max" value="${run.universe.reference.runs.statistics.max}"/>
+		<property name="universe_reference_runs_statistics_median" value="${run.universe.reference.runs.statistics.median}"/>
+		
+		<!-- distance table evolution -->
+		<property name="distances_evolution_xml_path" value="${run.universe.distances.xml.path}"/>		
+		
+		<!-- run scenarios -->
+		<property name="run_scenarios" value="${falc.run.scenarios}"/>
+		<property name="run_scenarios_xml_path" value="${falc.scenarios.xml}"/>
+	</bean>	
+	
+	<bean  class="org.falcsim.agentmodel.service.methods.util.domain.RunIndicatorsParameters">
+	    <property name="run_indicators_folder" value="${run.indicators.folder}"/>
+		<property name="run_indicators_description" value="${run.indicators.description}"/>
+		<property name="run_indicators_extra_description" value="${run.indicators.extra.description}"/>		
+		<property name="run_indicators_active" value="${run.indicators.active}"/>
+		<property name="run_indicators_export_level" value="${run.indicators.export.level}"/>
+		
+		<property name="run_indicators_export_ripis_business" value="${run.indicators.export.relocation.ripis.intervals.bussineses}"/>
+		<property name="run_indicators_export_ripis_households" value="${run.indicators.export.relocation.ripis.intervals.households}"/>
+		<property name="run_indicators_export_ripis_locations" value="${run.indicators.export.relocation.ripis.intervals.locations}"/>
+		
+		<property name="run_indicators_print_header_rows" value="${run.indicators.export.print.header.rows}"/>
+		
+		<property name="run_indicators_Overview_active" value="${run.indicators.Overview.active}"/>
+		<property name="run_indicators_Overview_runs_filter" value="${run.indicators.Overview.runs.filter}"/>
+		<property name="run_indicators_Overview_years_filter" value="${run.indicators.Overview.years.filter}"/>
+		<property name="run_indicators_Overview_locations" value="${run.indicators.Overview.locations}"/>
+		<property name="run_indicators_Overview_location_filter" value="${run.indicators.Overview.location.filter}"/>
+		<property name="run_indicators_Overview_municipalities" value="${run.indicators.Overview.municipalities}"/>
+		<property name="run_indicators_Overview_municipalities_filter" value="${run.indicators.Overview.municipalities.filter}"/>
+		<property name="run_indicators_Overview_cantons" value="${run.indicators.Overview.cantons}"/>
+		<property name="run_indicators_Overview_cantons_filter" value="${run.indicators.Overview.cantons.filter}"/>
+		<property name="run_indicators_Overview_all_year_single_file" value="${run.indicators.Overview.all_year_single_file}"/>
+		
+		<property name="run_indicators_GIS_active" value="${run.indicators.GIS.active}"/>
+		<property name="run_indicators_GIS_runs_filter" value="${run.indicators.GIS.runs.filter}"/>
+		<property name="run_indicators_GIS_years_filter" value="${run.indicators.GIS.years.filter}"/>
+		<property name="run_indicators_GIS_locations" value="${run.indicators.GIS.locations}"/>
+		<property name="run_indicators_GIS_location_filter" value="${run.indicators.GIS.location.filter}"/>
+		<property name="run_indicators_GIS_municipalities" value="${run.indicators.GIS.municipalities}"/>
+		<property name="run_indicators_GIS_municipalities_filter" value="${run.indicators.GIS.municipalities.filter}"/>
+		<property name="run_indicators_GIS_cantons" value="${run.indicators.GIS.cantons}"/>
+		<property name="run_indicators_GIS_cantons_filter" value="${run.indicators.GIS.cantons.filter}"/>
+		<property name="run_indicators_GIS_all_year_single_file" value="${run.indicators.GIS.all_year_single_file}"/>
+		
+		<property name="run_indicators_commuters_active" value="${run.indicators.commuters.active}"/>
+		<property name="run_indicators_commuters_runs_filter" value="${run.indicators.commuters.runs.filter}"/>
+		<property name="run_indicators_commuters_years_filter" value="${run.indicators.commuters.years.filter}"/>
+		<property name="run_indicators_commuters_locations" value="${run.indicators.commuters.locations}"/>
+		<property name="run_indicators_commuters_location_filter" value="${run.indicators.commuters.location.filter}"/>
+		<property name="run_indicators_commuters_municipalities" value="${run.indicators.commuters.municipalities}"/>
+		<property name="run_indicators_commuters_municipalities_filter" value="${run.indicators.commuters.municipalities.filter}"/>
+		<property name="run_indicators_commuters_cantons" value="${run.indicators.commuters.cantons}"/>
+		<property name="run_indicators_commuters_cantons_filter" value="${run.indicators.commuters.cantons.filter}"/>
+		<property name="run_indicators_commuters_all_year_single_file" value="${run.indicators.commuters.all_year_single_file}"/>		
+		
+		<property name="run_indicators_Businesses_active" value="${run.indicators.Businesses.active}"/>
+		<property name="run_indicators_Businesses_runs_filter" value="${run.indicators.Businesses.runs.filter}"/>
+		<property name="run_indicators_Businesses_years_filter" value="${run.indicators.Businesses.years.filter}"/>
+		<property name="run_indicators_Businesses_locations" value="${run.indicators.Businesses.locations}"/>
+		<property name="run_indicators_Businesses_location_filter" value="${run.indicators.Businesses.location.filter}"/>
+		<property name="run_indicators_Businesses_municipalities" value="${run.indicators.Businesses.municipalities}"/>
+		<property name="run_indicators_Businesses_municipalities_filter" value="${run.indicators.Businesses.municipalities.filter}"/>
+		<property name="run_indicators_Businesses_cantons" value="${run.indicators.Businesses.cantons}"/>
+		<property name="run_indicators_Businesses_cantons_filter" value="${run.indicators.Businesses.cantons.filter}"/>
+		<property name="run_indicators_Businesses_all_year_single_file" value="${run.indicators.Businesses.all_year_single_file}"/>
+		
+		<property name="run_indicators_BusinessesTypes_active" value="${run.indicators.BusinessesTypes.active}"/>
+		<property name="run_indicators_BusinessesTypes_runs_filter" value="${run.indicators.BusinessesTypes.runs.filter}"/>
+		<property name="run_indicators_BusinessesTypes_years_filter" value="${run.indicators.BusinessesTypes.years.filter}"/>
+		<property name="run_indicators_BusinessesTypes_locations" value="${run.indicators.BusinessesTypes.locations}"/>
+		<property name="run_indicators_BusinessesTypes_location_filter" value="${run.indicators.BusinessesTypes.location.filter}"/>
+		<property name="run_indicators_BusinessesTypes_municipalities" value="${run.indicators.BusinessesTypes.municipalities}"/>
+		<property name="run_indicators_BusinessesTypes_municipalities_filter" value="${run.indicators.BusinessesTypes.municipalities.filter}"/>
+		<property name="run_indicators_BusinessesTypes_cantons" value="${run.indicators.BusinessesTypes.cantons}"/>
+		<property name="run_indicators_BusinessesTypes_cantons_filter" value="${run.indicators.BusinessesTypes.cantons.filter}"/>
+		<property name="run_indicators_BusinessesTypes_all_year_single_file" value="${run.indicators.BusinessesTypes.all_year_single_file}"/>	
+		
+		<property name="run_indicators_Households_active" value="${run.indicators.Households.active}"/>
+		<property name="run_indicators_Households_runs_filter" value="${run.indicators.Households.runs.filter}"/>
+		<property name="run_indicators_Households_years_filter" value="${run.indicators.Households.years.filter}"/>
+		<property name="run_indicators_Households_locations" value="${run.indicators.Households.locations}"/>
+		<property name="run_indicators_Households_location_filter" value="${run.indicators.Households.location.filter}"/>
+		<property name="run_indicators_Households_municipalities" value="${run.indicators.Households.municipalities}"/>
+		<property name="run_indicators_Households_municipalities_filter" value="${run.indicators.Households.municipalities.filter}"/>
+		<property name="run_indicators_Households_cantons" value="${run.indicators.Households.cantons}"/>
+		<property name="run_indicators_Households_cantons_filter" value="${run.indicators.Households.cantons.filter}"/>
+		<property name="run_indicators_Households_all_year_single_file" value="${run.indicators.Households.all_year_single_file}"/>
+		
+		<property name="run_indicators_Persons_active" value="${run.indicators.Persons.active}"/>
+		<property name="run_indicators_Persons_runs_filter" value="${run.indicators.Persons.runs.filter}"/>
+		<property name="run_indicators_Persons_years_filter" value="${run.indicators.Persons.years.filter}"/>
+		<property name="run_indicators_Persons_locations" value="${run.indicators.Persons.locations}"/>
+		<property name="run_indicators_Persons_location_filter" value="${run.indicators.Persons.location.filter}"/>
+		<property name="run_indicators_Persons_municipalities" value="${run.indicators.Persons.municipalities}"/>
+		<property name="run_indicators_Persons_municipalities_filter" value="${run.indicators.Persons.municipalities.filter}"/>
+		<property name="run_indicators_Persons_cantons" value="${run.indicators.Persons.cantons}"/>
+		<property name="run_indicators_Persons_cantons_filter" value="${run.indicators.Persons.cantons.filter}"/>
+		<property name="run_indicators_Persons_all_year_single_file" value="${run.indicators.Persons.all_year_single_file}"/>
+		
+		<property name="run_indicators_Relocation_active" value="${run.indicators.Relocation.active}"/>
+		<property name="run_indicators_Relocation_cumulated" value="${run.indicators.Relocation.cumulated}"/>
+		<property name="run_indicators_Relocation_runs_filter" value="${run.indicators.Relocation.runs.filter}"/>
+		<property name="run_indicators_Relocation_years_filter" value="${run.indicators.Relocation.years.filter}"/>
+		<property name="run_indicators_Relocation_locations" value="${run.indicators.Relocation.locations}"/>
+		<property name="run_indicators_Relocation_location_filter" value="${run.indicators.Relocation.location.filter}"/>
+		<property name="run_indicators_Relocation_municipalities" value="${run.indicators.Relocation.municipalities}"/>
+		<property name="run_indicators_Relocation_municipalities_filter" value="${run.indicators.Relocation.municipalities.filter}"/>
+		<property name="run_indicators_Relocation_cantons" value="${run.indicators.Relocation.cantons}"/>
+		<property name="run_indicators_Relocation_cantons_filter" value="${run.indicators.Relocation.cantons.filter}"/>
+		<property name="run_indicators_Relocation_all_year_single_file" value="${run.indicators.Relocation.all_year_single_file}"/>
+		
+		<property name="run_indicators_LocationsZones_active" value="${run.indicators.LocationsZones.active}"/>
+		<property name="run_indicators_LocationsZones_runs_filter" value="${run.indicators.LocationsZones.runs.filter}"/>
+		<property name="run_indicators_LocationsZones_years_filter" value="${run.indicators.LocationsZones.years.filter}"/>
+		<property name="run_indicators_LocationsZones_locations" value="${run.indicators.LocationsZones.locations}"/>
+		<property name="run_indicators_LocationsZones_location_filter" value="${run.indicators.LocationsZones.location.filter}"/>
+		<property name="run_indicators_LocationsZones_all_year_single_file" value="${run.indicators.LocationsZones.all_year_single_file}"/>		
+		
+		<property name="run_indicators_RunInfo_active" value="${run.indicators.RunInfo.active}"/>
+		<property name="run_indicators_RunInfo_runs_filter" value="${run.indicators.RunInfo.runs.filter}"/>
+		<property name="run_indicators_RunInfo_years_filter" value="${run.indicators.RunInfo.years.filter}"/>
+		<property name="run_indicators_RunInfo_all_year_single_file" value="${run.indicators.RunInfo.all_year_single_file}"/>
+	</bean>	   	
+       	
+	<bean class="org.falcsim.agentmodel.app.domain.AppParameters">
+		<property name="migrationOn" value="${run.module.migrationOn}"/>
+		<property name="control_totals_residentsOn" value="${run.module.control_totals_residentsOn}"/>
+		<property name="demographyOn" value="${run.module.demographyOn}"/>
+		<property name="hhSeparationOn" value="${run.module.hhSeparationOn}"/>
+		<property name="hhFormationOn" value="${run.module.hhFormationOn}"/>
+		<property name="utilitiesHouseholdsOn" value="${run.module.relocationHouseholdsOn}"/>
+		<property name="utilitiesBusinessesOn" value="${run.module.relocationBusinessesOn}"/>		
+		<property name="firmographyOn" value="${run.module.firmographyOn}"/>
+		<property name="quittingEmplOn" value="${run.module.quittingEmplOn}"/>
+		<property name="joiningEmplOn" value="${run.module.joiningEmplOn}"/>
+	</bean>	
+	
+	<bean class="org.falcsim.agentmodel.dao.csv.CsvProperties">
+        <property name="path" value="${data.csv.path}" />
+		<property name="defaultSchema" value="${data.csv.defaultSchema}" />
+		<property name="distancesSchema" value="${data.csv.distancesSchema}" />
+		<property name="networksSchema" value="${data.csv.networksSchema}" />
+		<property name="columnsSeparator" value="${data.csv.columnsSeparator}" />
+		<property name="schemaDelimiter" value="${data.csv.schemaDelimiter}" />
+		<property name="charset" value="${data.csv.charset}" />
+		<property name="tableExtension" value="${data.csv.tableExtension}" />
+		<property name="columnDefinitionExtension" value="${data.csv.columnDefinitionExtension}" />
+		<property name="temporaryTableExtension" value="${data.csv.temporaryTableExtension}" />
+		<property name="decimalSeparator" value="${data.csv.decimalSeparator}" />
+		<property name="dateFormat" value="${data.dateFormat}" />
+		<property name="timestampFormat" value="${data.timestampFormat}" />
+	</bean>	
+	
+	<bean class="org.apache.commons.math3.random.MersenneTwister">
+		<!-- SEED could be managed by FaLC by properties... -->
+	</bean>
+	<bean class="org.falcsim.agentmodel.util.math.random.FaLCRandomGenerator">	
+		<property name="currentGenerator" value="XSRandom" />
+	</bean>
+	<bean id="randDevice" class="org.falcsim.agentmodel.statistics.RandDeviceStandardImpl" scope="prototype"/>  	
+	
+	<context:component-scan base-package="org.falcsim.agentmodel" />
+	
+	<context:annotation-config />
+	
+	<bean class="org.falcsim.agentmodel.service.ServiceSwissImpl_Memory"/> 	
+	<bean class=" org.falcsim.agentmodel.utility.dao.UtilityDaoHBImpl_2_bs_glbr_memoryCalc"/>
+	
+	<bean class="org.falcsim.agentmodel.utility.UtilityMoveSwiss_2_weighted1" />  
+	
+	<bean class="org.falcsim.agentmodel.dao.GeneralDaoImpl" />
+
+	<bean class="org.falcsim.agentmodel.dao.LocationDaoImpl" />	
+	   
+	<import resource="classpath:/META-INF/spring-config/distance-config.xml" />
+	<import resource="classpath:/META-INF/spring-config/accessiblevars-config.xml" />
+	<import resource="classpath:/META-INF/spring-config/utility-config.xml" />
+	<import resource="classpath:/META-INF/spring-config/synthese-config.xml" />  
+	<import resource="classpath:/META-INF/spring-config/entropy-config.xml" /> 
+	<import resource="classpath:/META-INF/spring-config/firmography-config.xml" />
+	<import resource="classpath:/META-INF/spring-config/demography-config.xml" />
+	<import resource="classpath:/META-INF/spring-config/service-config.xml" />
+		
+</beans>

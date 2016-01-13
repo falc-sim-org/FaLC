@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+">
+	<bean class="org.falcsim.agentmodel.distances.domain.DistanceParameters">
+		<property name="sourceFile" value="${dist.source.file}"/>
+		<!-- property name="maxThreads" value="${app.maximum.threads}"/ --> 
+		<property name="bicycleMaxSpeed" value="${dist.bicycle.maxSpeed}"/>
+		<property name="bicycleLinkFilter" value="${dist.bicycle.linkFilter}"/>
+		<property name="defaultDistance" value="${dist.default.distance}"/>
+		<property name="defaultTime" value="${dist.default.time}"/>
+		<property name="carDiiIntervals" value="${dist.car.dii.default.values}"/>
+		<property name="carTiiIntervals" value="${dist.car.tii.default.values}"/>
+		<property name="publicDiiIntervals" value="${dist.public.dii.default.values}"/>
+		<property name="publicTiiIntervals" value="${dist.public.tii.default.values}"/>		
+		<property name="bicycleDiiIntervals" value="${dist.bicycle.dii.default.values}"/>
+		<property name="bicycleTiiIntervals" value="${dist.bicycle.tii.default.values}"/>
+				
+		<!-- Parameters for Debug OSM Dijkstra alg. -->
+		<property name="saveRoute" value="${dist.saveRoute}"/>
+		<property name="saveRouteDelimiter" value="${dist.saveRouteDelimiter}"/>
+		<property name="saveRouteAsShp" value="${dist.saveRouteSHP}"/>
+		<property name="saveRoutePath" value="${dist.saveRoutePath}"/>
+		<property name="saveRouteFromIdLoc" value="${dist.saveRouteFromIdLoc}"/>	
+		<property name="saveUsedNetwork" value="${dist.network.used}"/>		
+		<property name="saveSpiderWebAsShp" value="${dist.save.spider.shapefiles}"/>
+		<property name="distanceUnit" value="${dist.distances.unit}"/>
+		<property name="timeUnit" value="${dist.time.unit}"/>
+		<property name="saveSpiderWebDecimalPlaces" value="${dist.decimal.places}"/>
+			
+	</bean>
+</beans>

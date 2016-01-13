@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+">
+
+	<bean class="org.falcsim.agentmodel.accessiblevars.domain.AccessibleVarsParameters">
+	   	<property name="accessLimit" value="${accessibility.variables.distance.limit}"/>
+		<property name="accessBeta" value="${accessibility.variables.beta}"/>
+		<property name="accessTiiIntervals" value="${accessibility.variables.tii.intervals}"/>
+		<property name="accessMathLog" value="${accessibility.variables.apply.math.log}"/> 
+		<property name="accessMinValue" value="${accessibility.variables.min.value}"/>
+		<property name="xmlpath" value="${accessibility.variables.xml.path}"/>		
+	</bean>	
+    
+</beans>

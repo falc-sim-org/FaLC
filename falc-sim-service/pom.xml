@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.falcsim</groupId>
+		<artifactId>falc-sim</artifactId>
+		<version>1.1.0</version>
+	</parent>
+
+	<artifactId>falc-sim-service</artifactId>
+	<name>falc-sim-service</name>
+	<url>http://www.falc-sim.org</url>
+	
+	<organization>
+		<name>regioConcept AG</name>
+		<url>http://www.regioconcept.ch/</url>
+	</organization>
+	
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+			<version>${project.dependency.spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>log4j-over-slf4j</artifactId>
+		</dependency>
+	</dependencies>
+
+	<licenses>
+		<license>
+			<name>FaLC-pro License</name>
+			<url>http://www.falc-sim.org/documents/FaLC-pro_Licence-Agreement_en.pdf</url>
+			<distribution>manual</distribution>
+		</license>
+		<!-- <license>
+			<name>GNU Affero General Public License version 3 (AGPLv3)</name>
+			<url>http://www.gnu.org/licenses/agpl.txt</url>
+		</license> -->
+	</licenses>
+
+	<profiles>
+		<profile>
+			<id>distribution</id>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-jarsigner-plugin</artifactId>
+						<configuration>
+							<keystore>${path.keystore}</keystore>
+							<alias>${keystore.alias}</alias>
+							<storepass>${keystore.pass}</storepass>
+						</configuration>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+		<profile>
+			<id>release</id>
+		</profile>
+	</profiles>
+
+
+	<build>
+	
+	</build>
+	<description>This project contains interfaces which are implemented in FaLC</description>
+</project>

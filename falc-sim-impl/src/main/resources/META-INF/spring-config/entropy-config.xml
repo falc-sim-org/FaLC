@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+">
+	<!--@ENTROPY-CONFIG-OS -->
+	<!--  Impementation choice -->
+	<!-- <bean  class="org.falcsim.agentmodel.entropy.load.DataLoader_Zones_Impl_1"/> 
+	<bean  class="org.falcsim.agentmodel.entropy.EntropyDistribution_IPF2_Impl_1"/>
+	<bean class="org.falcsim.agentmodel.entropy.load.DataOutputMapImpl_1"/>   
+	<bean class="org.falcsim.agentmodel.entropy.education.EducationDistribution_Impl_1"/> --> 
+	
+	<bean class="org.falcsim.agentmodel.entropy.domain.EntropyParameters">
+		<property name="numStep" value="${entropy.numStep}"/>
+		<property name="parameter1" value="${entropy.parameter1}"/>
+		<property name="saveOption" value="${entropy.saveOption}"/>
+	</bean>	
+	<!-- @ENTROPY-CONFIG-OS-->	
+</beans>

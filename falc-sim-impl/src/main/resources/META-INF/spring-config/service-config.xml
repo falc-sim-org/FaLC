@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+">	
+	<bean class="org.falcsim.agentmodel.service.domain.DemographyParameters">
+        <property name="maxAge" value="${module.demography.maxAge}" />
+        <property name="probMaxAgeDie" value="${module.demography.dieAtMaxAge.probability}" />
+        <property name="motherMinAge" value="${module.demography.motherMinAge}" />
+        <property name="motherMaxAge" value="${module.demography.motherMaxAge}" />
+        <property name="genderBoyProbability" value="${module.demography.genderBoy.probability}" />
+	</bean>	
+	
+	<bean class="org.falcsim.agentmodel.service.domain.MigrationParameters">
+        <property name="migrationDataLevel" value="${module.migration.datalevel}" />
+        <property name="genderBoyProbability" value="${module.migration.genderBoy.probability}" />
+	</bean>	
+	
+	<bean class="org.falcsim.agentmodel.service.domain.ControlTotalResidentsParameters">
+        <property name="controlTotalsDataLevel" value="${module.controlTotal.datalevel}" />
+	</bean>	
+	
+	<bean class="org.falcsim.agentmodel.service.domain.HhFormationParameters">
+		<property name="hhformationProbability" value="${demography.hhformation.probability}"/>
+		<property name="hhformationMinage" value="${demography.hhformation.minage}"/>
+	</bean>	
+	
+	<bean class="org.falcsim.agentmodel.service.domain.RelocationParameters">
+		<property name="hhMayRelocateInFirstYear" value="${module.relocation.new.households}"/>
+		<property name="hhMayChooseCurrentLocation" value="${module.relocation.households.select.current.location}"/>
+		<property name="hhRelocationRateCorrection" value="${module.relocation.rate.factor.households.active}"/>
+		<property name="bbMayRelocateInFirstYear" value="${module.relocation.new.companies}"/>
+		<property name="bbMayChooseCurrentLocation" value="${module.relocation.companies.select.current.location}"/>
+		<property name="bbRelocationRateCorrection" value="${module.relocation.rate.factor.businesses.active}"/>
+		<property name="limitGtGmz" value="${module.relocation.limit_gt_gmz}"/>
+		<property name="landUseLimitationOn" value="${module.relocation.landlimit.active}"/>
+		<property name="limitationCheckEachMoveOn" value="${module.relocation.landlimit.calculate.each.move}"/>
+		<property name="landLimitProbability" value="${module.relocation.landlimit.probability.interval}"/>
+		<property name="relocationMinDistance" value="${module.relocation.min.distance}"/>		
+		<property name="relocationMaxDistance" value="${module.relocation.max.distance}"/>
+		<property name="locationGrowthLossActive" value="${module.relocation.locationmaxgrowth.active}"/>		
+	</bean>	
+</beans>

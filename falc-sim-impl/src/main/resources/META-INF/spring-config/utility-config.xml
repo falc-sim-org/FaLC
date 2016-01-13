@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-3.1.xsd">
+
+	
+	<bean class="org.falcsim.agentmodel.utility.domain.UtilityParameters_2A">
+		<property name="filePathUtilitiesXml" value="${utility.relocation.source.xml.path}"/>	
+		<property name="locationChoiceManagedByID" value="${utility.location.choice.managed.by.ID}"/>		
+	</bean>
+	
+	<!-- <bean  class="org.falcsim.agentmodel.utility.landusage.domain.LandUsageParameters">
+	    <property name="active" value="${utility.landlimit.active}"/>
+		<property name="probability_interval" value="${landlimit.probability.interval}"/>
+       	<property name="calculate_each_move" value="${landlimit.calculate.each.move}"/>
+    </bean>	   -->
+    	  
+	<bean  class="org.falcsim.agentmodel.sublocations.domain.SublocationsParameters">
+	    <property name="active" value="${module.relocation.sublocation.active}"/>
+	    <property name="generate_years" value="${subset.generate.years}"/>  
+		<property name="innerCircle" value="${subset.innercircle.km}"/>
+		<property name="innerCircleProb" value="${subset.innercircle.probability}"/>
+       	<property name="outerCircle" value="${subset.outercircle.km}"/>
+       	<property name="outerCircleProb" value="${subset.outercircle.probability}"/>
+       	<property name="aglomerationProbH" value="${subset.aglomeration.households.probability}"/>
+       	<property name="aglomerationProbB" value="${subset.aglomeration.businesses.probability}"/>
+       	<property name="bigCitiesProbH" value="${subset.bigcities.households.probability}"/>
+       	<property name="bigCitiesProbB" value="${subset.bigcities.businesses.probability}"/>
+       	<property name="motorwayAccessH" value="${subset.motorwayaccess.households.km}"/>
+       	<property name="motorwayAccessB" value="${subset.motorwayaccess.businesses.km}"/>
+       	<property name="motorwayAccessProbH" value="${subset.motorwayaccess.households.probability}"/>
+       	<property name="motorwayAccessProbB" value="${subset.motorwayaccess.businesses.probability}"/>	  	
+       	<property name="subsetFilterH" value="${subset.filter.households}"/>	
+       	<property name="subsetFilterB" value="${subset.filter.business}"/>	
+    </bean>	  
+	
+	<bean class="org.falcsim.agentmodel.utility.domain.UtilitySublocationsImpl" />
+	<bean class="org.falcsim.agentmodel.utility.landusage.LandUsageImpl" />
+		
+</beans>

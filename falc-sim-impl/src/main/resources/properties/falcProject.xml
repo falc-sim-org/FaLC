@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<falcconfig>
+    <property name="falc.run.scenarios" value="false"/>
+    <property name="falc.scenarios.xml" value="d:/Projects/Eclipse/RegioConcept/falcsim-distribution/FaLC/FaLC_template_0_0_1.proj/properties/falcScenarios.xml"/>
+    
+    <property name="run.populateDistances" value="false"/>
+    <property name="dist.source.file" value="d:/Projects/Eclipse/RegioConcept/falcsim-distribution/FaLC/FaLC_template_0_0_1.proj/properties/networksDefinitions.xml"/>
+
+    <property name="utility.relocation.source.xml.path" value="d:/Projects/Eclipse/RegioConcept/falcsim-distribution/FaLC/FaLC_template_0_0_1.proj/properties/utilityFunctions.xml"/>
+
+    <property name="run.indicators.export.level" value="1"/>
+    <property name="run.indicators.folder" value="d:/Projects/Eclipse/RegioConcept/falcsim-distribution/FaLC/FaLC_template_0_0_1.proj/db/_FaLC_results/"/>
+    <property name="data.csv.path" value="d:/Projects/Eclipse/RegioConcept/falcsim-distribution/FaLC/FaLC_template_0_0_1.proj/db/"/>
+	<property name="dist.saveRoutePath" value="d:/Projects/Eclipse/RegioConcept/"/>
+	
+	<table name="distances" value="distances/distances__CH_NPVM2005" />
+
+
+	<table name="assumptions/cantons" value="assumptions/cantons__CH"/>
+	<table name="assumptions/municipalities" value="assumptions/municipalities__CH"/>
+		
+	<table name="assumptions/demography_fertility" value="assumptions/demography_fertility__CH"/>
+	<table name="assumptions/demography_mortality" value="assumptions/demography_mortality__CH"/>
+	<table name="assumptions/education_level_age_rates" value="assumptions/education_level_age_rates__CH"/>
+	
+	<table name="assumptions/firms_closure" value="assumptions/firms_closure__CH"/>
+	<table name="assumptions/firms_employement_durations" value="assumptions/firms_employement_durations__CH"/>	
+	<table name="assumptions/firms_relocation" value="assumptions/firms_relocation__CH"/>
+
+	<table name="assumptions/households_divorce_years" value="assumptions/households_divorce_years__CH"/>
+	<table name="assumptions/households_leaving_rates" value="assumptions/households_leaving_rates__CH"/>	
+	<table name="assumptions/households_migration_residents" value="assumptions/households_migration_residents__CH"/>	
+	<table name="assumptions/households_migration_shares" value="assumptions/households_migration_shares__CH"/>	
+	<table name="assumptions/households_relocation" value="assumptions/households_relocation__CH"/>
+	
+	<table name="assumptions/location_attributes" value="assumptions/location_attributes__CH"/>
+	<table name="assumptions/location_attributes_development" value="assumptions/location_attributes_development__CH"/>
+	<table name="assumptions/control_totals_residents" value="assumptions/control_totals_residents__CH_v03_2000-2030_decades_cantons"/>	
+	
+	<table name="subsets/location_subset_development" value="subsets/location_subset_development__CH"/>
+
+	<table name="assumptions/landusage_m2_per_person" value="assumptions/landusage_m2_per_person__CH"/>
+	<table name="assumptions/landusage_uf_assumptions" value="assumptions/landusage_uf_assumptions__CH"/>
+	<table name="assumptions/landusage_bzr_calibration" value="assumptions/landusage_bzr_calibration__CH"/>
+	<table name="assumptions/landusage_building_zone_regulation" value="assumptions/landusage_building_zone_regulation__CH"/>
+
+	  <property name="run.universe.population.subschema" value="lucerne_2000" />	  
+	  <property name="run.universe" value="false" />
+      <property name="run.universe.years" value="3" />   
+      <property name="run.universe.reference.runs" value="true" />	  
+      <property name="run.universe.reference.runs.to.cycle" value="2" />
+      <property name="run.universe.final.save" value="false" />
+      
+	  <property name="run.universe.reference.runs.copy.best.cycle" value="false" />
+	  <property name="run.universe.reference.runs.copy.best.cycle.population.name" value="results_lu_01" />  
+	  <property name="run.universe.reference.runs.copy.best.cycle.clean.universe" value="true" />    	  
+
+      <property name="run.indicators.description" value="LU_universe" /> 	  
+
+
+</falcconfig>

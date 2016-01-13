@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+
+	<populate type="ARE" tablename="distances/filename01" populate="false">		 
+    	<cardistances path="path to ARE car transport distances file" />
+		<cartimes path="path to ARE car transport time file" />
+		<publicdistances path="path to ARE public transport distances file" />
+		<publictimes path="path to ARE public transport time file" />
+		<missingdistancesreport path="path to the output CSV file with missing distances(will be created by function)" />
+	</populate>
+	
+	<populate type="OSM" tablename="distances/filename01" populate="false">
+    	<centoids path="path to OSM centroids CSV file" />
+     	<generalizedStreetsCars path="path to OSM car transport network CSV file" />
+    	<generalizedStreetsPublic path="path to OSM public transport network CSV file" /> 
+		<missingdistancesreport path="path to the output CSV file with missing distances(will be created by function)" />
+	</populate>
+
+</config>

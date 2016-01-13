@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<falcconfig>
+	<property name="app.maximum.threads" value="4"/>
+	<property name="run.universe" value="true"/>
+    <property name="run.universe.years" value="1"/>
+	<property name="run.universe.final.save" value="false"/>
+	
+    <property name="run.universe.reference.runs" value="true"/>
+    <property name="run.universe.reference.runs.to.cycle" value="1"/>
+	
+    <property name="run.universe.population.subschema" value="switzerland_2000"/>
+	<property name="run.universe.reference.runs.random.generator.seed" value="0"/>
+	
+	<property name="run.universe.reference.runs.copy.best.cycle" value="false" /> 
+	<property name="run.universe.reference.runs.copy.best.cycle.population.name" value="result_CH" />  
+	<property name="run.universe.reference.runs.copy.best.cycle.clean.universe" value="true" /> 		
+	
+	<property name="run.module.control_totals_residentsOn" value="false"/>
+    <property name="run.indicators.export.level" value="1"/>
+    <property name="run.indicators.folder" value="/20150126/FaLC_template_0_0_1.proj/db/_FaLC_results/"/>	
+	<property name="data.csv.path" value="/20150126/FaLC_template_0_0_1.proj/db/"/>
+
+	<table name="assumptions/demography_fertility" value="assumptions/demography_fertility__CH"/>
+	<table name="assumptions/demography_mortality" value="assumptions/demography_mortality__CH"/>
+	<table name="assumptions/firms_closure" value="assumptions/firms_closure__CH"/>
+	<table name="assumptions/firms_relocation" value="assumptions/firms_relocation__CH"/>
+	
+	<table name="assumptions/households_leaving_rates" value="assumptions/households_leaving_rates__CH"/>
+	<table name="assumptions/households_relocation" value="assumptions/households_relocation__CH"/>
+	<table name="assumptions/location_attributes_development" value="assumptions/location_attributes_development__CH"/>
+	<table name="assumptions/control_totals_residents" value="assumptions/control_totals_residents__Cantons"/>
+</falcconfig>

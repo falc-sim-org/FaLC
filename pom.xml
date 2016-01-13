@@ -1,0 +1,84 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>org.falcsim</groupId>
+	<artifactId>falc-sim</artifactId>
+	<version>1.1.0</version>
+	<packaging>pom</packaging>
+
+	<name>falc-sim</name>
+	<url>http://www.falc-sim.org</url>
+
+	<licenses>
+		<license>
+			<name>FaLC-pro License</name>
+			<url>http://www.falc-sim.org/documents/FaLC-pro_Licence-Agreement_en.pdf</url>
+			<distribution>manual</distribution>
+		</license>
+		<license>
+			<name>GNU Affero General Public License version 3 (AGPLv3)</name>
+			<url>http://www.gnu.org/licenses/agpl.txt</url>
+		</license>
+	</licenses>
+
+	<modules>
+		<module>falc-sim-util</module>
+		<module>falc-sim-service</module>
+		<module>falc-sim-impl</module>
+		
+	</modules>
+
+
+	<properties>
+		<build.number.svn>1631</build.number.svn>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<maven.compiler.source>1.7</maven.compiler.source>
+		<maven.compiler.target>1.7</maven.compiler.target>
+		<project.dependency.spring.version>4.1.2.RELEASE</project.dependency.spring.version>
+		
+	</properties>
+		
+	
+	
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>ch.qos.logback</groupId>
+				<artifactId>logback-core</artifactId>
+				<version>1.0.13</version>
+			</dependency>
+			<dependency>
+				<groupId>org.slf4j</groupId>
+				<artifactId>log4j-over-slf4j</artifactId>
+				<version>1.7.5</version>
+			</dependency>
+			<dependency>
+				<groupId>commons-lang</groupId>
+				<artifactId>commons-lang</artifactId>
+				<version>2.6</version>
+			</dependency>
+			<dependency>
+				<groupId>commons-io</groupId>
+				<artifactId>commons-io</artifactId>
+				<version>2.4</version>
+			</dependency>
+			<dependency>
+				<groupId>commons-codec</groupId>
+				<artifactId>commons-codec</artifactId>
+				<version>1.10</version>
+			</dependency>
+			<dependency>
+				<groupId>commons-net</groupId>
+				<artifactId>commons-net</artifactId>
+				<version>3.3</version>
+			</dependency>
+			
+		</dependencies>
+	</dependencyManagement>
+	<organization>
+		<name>regioConcept AG</name>
+		<url>http://www.regioconcept.ch/</url>
+	</organization>
+	<description>The root maven project used only for pom packaging and dependenicies management.</description>
+</project>

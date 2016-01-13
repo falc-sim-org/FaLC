@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<falcconfig>
+
+
+	<scenario id="universe01" desc="universe1" active="false" >
+
+	  <property name="run.universe.population.subschema" value="results_synthesis_ch" />
+	  
+	  <property name="run.synthese" value="true" />
+    </scenario>
+
+
+	<scenario id="universe01" desc="universe1" active="false" >
+
+	  <property name="run.universe.population.subschema" value="lucerne_2000" />
+	  
+	  <property name="run.universe" value="true" />
+      <property name="run.universe.years" value="1" />   
+      <property name="run.universe.reference.runs" value="true" />	  
+      <property name="run.universe.reference.runs.to.cycle" value="1" />
+      <property name="run.universe.final.save" value="true" />
+      
+	  <property name="run.universe.reference.runs.copy.best.cycle" value="true" />
+	  <property name="run.universe.reference.runs.copy.best.cycle.population.name" value="results_lu_01" />  
+	  <property name="run.universe.reference.runs.copy.best.cycle.clean.universe" value="true" />    	  
+
+      <property name="run.indicators.description" value="LU_universe" /> 	        	  
+    </scenario>
+
+	<scenario id="universe02" desc="universe2" active="false" >
+
+	  <property name="run.universe.population.subschema" value="results_lu_01" />
+	  
+	  <property name="run.universe" value="true" />
+      <property name="run.universe.years" value="2" />   
+      <property name="run.universe.reference.runs" value="true" />	  
+      <property name="run.universe.reference.runs.to.cycle" value="2" />
+      <property name="run.universe.final.save" value="false" />
+      
+	  <property name="run.universe.reference.runs.copy.best.cycle" value="false" />
+	  <property name="run.universe.reference.runs.copy.best.cycle.population.name" value="results_lu_02" />  
+	  <property name="run.universe.reference.runs.copy.best.cycle.clean.universe" value="true" />    	  
+
+      <property name="run.indicators.description" value="LU_universe" /> 	        	  
+    </scenario>
+
+</falcconfig>

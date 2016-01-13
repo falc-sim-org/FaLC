@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+">
+
+	<bean class="org.falcsim.agentmodel.service.domain.FirmographyParameters">
+		<property name="smallCompanyMaxEmployees" value="${business.small.company.max.employees}"/>
+		<property name="bigCompanyMaxEmployees" value="${business.big.company.max.employees}"/>
+		<property name="smallCompanyCreateProb" value="${business.small.company.creation.probability}"/>
+		<property name="maximumJobDuration" value="${business.maximum.job.duration}"/>
+		<property name="minimumJobAge" value="${business.minimum.job.age}"/>
+		<property name="maximumJobAge" value="${business.maximum.job.age}"/>
+		<property name="minimumCeoAge" value="${business.minimum.ceo.age}"/>
+		<property name="maximumCeoAge" value="${business.maximum.ceo.age}"/>
+		<property name="growthPercentage" value="${business.growth.percentage}"/>
+		<property name="maximalEmploymentLevel" value="${business.maximal.employment.level}"/>
+	</bean>	
+		
+</beans>

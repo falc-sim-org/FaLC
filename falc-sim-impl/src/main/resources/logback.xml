@@ -1,0 +1,43 @@
+<configuration debug="false">
+	<consolePlugin />
+	
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<filter class="org.falcsim.agentmodel.app.util.ConsoleFilter" >
+			<param name="toConsole" value="true" />
+		</filter>
+		<encoder>
+			<pattern>%msg%n</pattern>
+		</encoder>
+	</appender>
+
+	<appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<filter class="org.falcsim.agentmodel.app.util.ConsoleFilter" >
+			<param name="toConsole" value="false" />
+		</filter>
+		
+		<file>log/falc.log</file>
+		<encoder>
+			<pattern>%d{HH:mm:ss.SSS} %10relative [%thread] %-5level %logger 5L - %msg%n
+			</pattern>
+		</encoder>
+		<rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
+			<fileNamePattern>log/falc.%i.log.zip</fileNamePattern>
+			<minIndex>1</minIndex>
+			<maxIndex>20</maxIndex>
+		</rollingPolicy>
+
+		<triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+			<maxFileSize>20MB</maxFileSize>
+		</triggeringPolicy>
+	</appender>
+
+	<logger name="org.springframework" level="ERROR"/>
+	<logger name="org.springframework.transaction.interceptor" level="ERROR"/>
+	<logger name="org.falcsim" level="DEBUG"/>
+	<logger name="com.falcsim" level="DEBUG"/>
+
+	<root level="ERROR">
+		<appender-ref ref="STDOUT" />
+		<appender-ref ref="FILE" />
+	</root>
+</configuration>

@@ -1,0 +1,84 @@
+Portions of this product distribution require certain copyright or other notices to 
+be included with the product distribution.  These notices may also appear in individual 
+source files.
+
+Below is the list of licenses and modules used under corresponding licenses,
+
+
+***AGPL***
+itext		http://itextpdf.com (!for commercial version commercial license is needed)
+
+***Apache 2.0 - License***=
+cglib				http://cglib.sourceforge.net/
+Commons				http://commons.apache.org/
+EasyMock			http://easymock.org/
+Groovy				http://groovy.codehaus.org/
+Google Gson			https://code.google.com/p/google-gson/
+Javaassists			http://www.csg.ci.i.u-tokyo.ac.jp/~chiba/javassist/
+joda				http://www.joda.org/joda-time
+log4j
+objenesis			https://code.google.com/p/objenesis/
+Spring Framework	http://projects.spring.io/spring-framework/
+Xerces				http://xerces.apache.org/xerces-j/
+
+***ASM Project License***
+ASM		http://asm.ow2.org/
+
+***BSD License ***
+Antlr 		http://www.antlr.org 
+Dom4J		http://dom4j.sourceforge.net
+hamcrest	https://code.google.com/p/hamcrest/
+imageio-ext	https://java.net/projects/imageio-ext
+jsr 275
+JAITools	http://jaitools.org/
+JUnit		http://junit.org/
+miglayout	http://www.miglayout.com/
+postgresql	http://jdbc.postgresql.org/
+
+***CDDL***
+jta 
+  
+***Eclipse Public License***
+AspectJ		http://eclipse.org/aspectj/
+c3p0		http://sourceforge.net/projects/c3p0/
+logback		http://logback.qos.ch/
+
+***GPL V2***
+matsim	http://matsim.org
+
+***GPL V3***
+miglayout	http://www.miglayout.com/
+
+***ICU License***
+ICU http://site.icu-project.org/
+
+***Java Research License***
+JAI http://www.oracle.com/technetwork/java/javase/tech/jai-142803.html (!no compatible with commercial version)
+
+***JDOM License (Apache based)***
+jdom	http://www.jdom.org
+
+***LGPL 2.1***
+GeoTools	http://geotools.org
+Hibernate	http://hibernate.org
+Javaassists	http://www.csg.ci.i.u-tokyo.ac.jp/~chiba/javassist/
+jGrapht		http://jgrapht.org
+jgridshift	http://sourceforge.net/projects/jgridshift/
+JTS			http://www.vividsolutions.com/jts/JTSHome.htm
+jExcelAPI	http://www.jexcelapi.org/
+logback		http://logback.qos.ch/
+
+***MIT License***
+slf4j	http://www.slf4j.org
+                
+***MPL***
+Javaassists	http://www.csg.ci.i.u-tokyo.ac.jp/~chiba/javassist/
+
+***OSM2PO License***
+osm2po	http://osm2po.de/
+
+***Public Domain License***
+AOP Alliance	http://aopalliance.sourceforge.net/
+
+***vecmath license***
+vecmath		http://www.oracle.com/technetwork/java/javase/tech/index-jsp-138252.html
