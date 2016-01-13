@@ -10,7 +10,7 @@ FaLC is able to run small projects on 32bit, single core Linux or Windows enviro
 
 ## Installation
 
-Prerequisites:
+**Prerequisites**
 
 1. Download and install required software
 	- JDK 1.7 or above (http://java.oracle.com)
@@ -26,7 +26,7 @@ Prerequisites:
 3. Install additional eclipse plugin for SVN, AspectJ and m2e (if not yet installed)
 
 
-Build FaLC:
+**Build FaLC**
 
 1. Checkout FaLC project from SVN. Now the project is organized as:
 	- falc-sim-impl
@@ -43,7 +43,7 @@ Build FaLC:
 3. Create build, run and debug configurations for project
 
 
-Run sample project:
+**Run sample project**
 
 1. Sample FaLC projects are stored in independent GitHUB project FaLC-Templates. 
     - FaLC_template_sg-ar-ai_1_1_5.proj
