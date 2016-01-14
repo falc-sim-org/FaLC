@@ -6,7 +6,7 @@ FALC enables simulations of the (future) development of population, jobs, constr
 
 ## Hardware
 
-FaLC is able to run small projects on 32bit, single core Linux or Windows environment. However, to increase simulation performance by multi thread computing, we recommed to use 64bit multi core systems.
+FaLC is able to run small projects on 32bit, single core Linux or Windows environment. However, to improve memory usage and increase simulation performance by multi thread computing, we recommed to use 64bit multi core systems.
 
 ## Installation
 
