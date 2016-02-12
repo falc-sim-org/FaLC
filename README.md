@@ -49,9 +49,9 @@ FaLC is able to run small projects on 32bit, single core Linux or Windows enviro
     - FaLC_template_sg-ar-ai_1_1_5.proj
 
 2. Run falc using command line 
-	java -Xms1G -Xmx4G -jar falc-sim-impl-1.1.0.jar -Dproject.name="full path to FaLC project directory"
+	- java -Xms1G -Xmx4G -jar falc-sim-impl-1.1.0.jar -Dproject.name="full path to FaLC project directory"
 	
 	For more information, check "run-info" directory
 
 3. Comment
-	falc creates log file "\log\falc.log" during run with detailed information.
+	- falc creates log file "\log\falc.log" during run with detailed information.
