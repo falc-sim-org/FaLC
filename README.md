@@ -8,7 +8,7 @@ The code published in GitHub includes the core of FaLC simulation software and b
 
 FaLC-core published in GitHub runs independently of additional FaLC-software packages - e.g. FaLC-pro. Indeed, a GUI and other packages such as a Transport Module or a Synthetic Populatio Modeler are available under [www.falc-sim.org](http://www.falc-sim.org).
 
-To allow the user the greatest possible flexibility in the model design, the code of FaLC-core is openly available and adaptable. Therefore, the core of FaLC is published under a Dual Licence: Open-Source-Licence ([AGPL Version 3](http://www.gnu.org/licenses/licenses.en.html)) as well as under the proprietary [FaLC-pro-License] http://www.falc-sim.org/documents/FaLC-pro_Licence-Agreement_en.pdf). 
+To allow the user the greatest possible flexibility in the model design, the code of FaLC-core is openly available and adaptable. Therefore, the core of FaLC is published under a Dual Licence: Open-Source-Licence ([AGPL Version 3](http://www.gnu.org/licenses/licenses.en.html)) as well as under the proprietary [FaLC-pro-License](http://www.falc-sim.org/documents/FaLC-pro_Licence-Agreement_en.pdf). 
 
 ## Hardware
 
