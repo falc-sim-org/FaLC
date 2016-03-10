@@ -4,6 +4,12 @@
 
 FALC enables simulations of the (future) development of population, jobs, construction, real estate demand, transport, and their interaction effects. The models include a large amount of information: for example, age and income of residents, commuting ties as well as the spatial distribution of the companies in various industries. 
 
+The code published in GitHub includes the core of FaLC simulation software and basically involves models of the annual cycles. These are processed sequentially in each simulation cycle. In a first step, distances may are recalculated and changed assumptions are imported. Afterwards, demographic models are processed before the companies may change. 
+
+FaLC-core published in GitHub runs independently of additional FaLC-software packages - e.g. FaLC-pro. Indeed, a GUI and other packages such as a Transport Module or a Synthetic Populatio Modeler are available under [www.falc-sim.org](http://www.falc-sim.org).
+
+To allow the user the greatest possible flexibility in the model design, the code of FaLC-core is openly available and adaptable. Therefore, the core of FaLC is published under a Dual Licence: Open-Source-Licence ([AGPL Version 3](http://www.gnu.org/licenses/licenses.en.html)) as well as under the proprietary [FaLC-pro-License] http://www.falc-sim.org/documents/FaLC-pro_Licence-Agreement_en.pdf). 
+
 ## Hardware
 
 FaLC is able to run small projects on 32bit, single core Linux or Windows environment. However, to improve memory usage and increase simulation performance by multi thread computing, we recommed to use 64bit multi core systems.
